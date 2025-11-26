@@ -17,10 +17,24 @@ export const Chat = () => {
     const question = input.trim();
     const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
     const nq = normalize(question);
-    const found = sampleData.find((item) => {
+    const stop = new Set(['what','is','are','can','you','explain','the','a','an','my','hi','how','your']);
+    const tokens = (s) => normalize(s).split(/\s+/).filter(w => w && !stop.has(w) && w.length >= 3);
+    let found = sampleData.find((item) => {
       const iq = normalize(item.question);
       return nq === iq || nq.includes(iq) || iq.includes(nq);
     });
+    if (!found) {
+      const nt = tokens(question);
+      let best = { item: null, score: -1 };
+      for (const item of sampleData) {
+        const it = tokens(item.question);
+        const set = new Set(it);
+        const common = nt.filter(w => set.has(w));
+        const score = common.length;
+        if (score > best.score) best = { item, score };
+      }
+      if (best.item && best.score >= 2) found = best.item;
+    }
     const response = found
       ? found.response
       : "Sorry, Did not understand your query!";
