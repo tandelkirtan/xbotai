@@ -20,7 +20,9 @@ export const NewChat = ({ onClose }) => {
         height:"8%",    
         bgcolor:"#b58bffff"}}>
             <Box borderRadius={4} component="img" src={logo} alt='logo' height="80%"></Box>  
-            <Typography  fontSize="20px" fontWeight={600}>New Chat</Typography>
+            <Link to="/" onClick={() => onClose && onClose()} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Typography fontSize="20px" fontWeight={600}>New Chat</Typography>
+            </Link>
             <EditSquareIcon/>
         </Box>
 
