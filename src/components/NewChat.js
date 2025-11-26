@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material'
+import { Link } from 'react-router'
 import logo from "../assets/logo.png"
 import EditSquareIcon from '@mui/icons-material/EditSquare';
 
@@ -30,7 +31,9 @@ export const NewChat = ({ onClose }) => {
             alignItems:"center",
         width:"100%",
         height:"8%"}}>
-            <Typography px={1} borderRadius={1} bgcolor="#b58bffff" fontSize="20px" fontWeight={600}>Past Conversations</Typography>
+            <Link to="/history" href="/history" style={{ textDecoration: 'none' }}>
+                <Typography px={1} borderRadius={1} bgcolor="#b58bffff" fontSize="20px" fontWeight={600}>Past Conversations</Typography>
+            </Link>
         </Box>
     </Box>
   )

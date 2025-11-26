@@ -31,7 +31,7 @@ export const Inputs = ({ input, setInput, onSubmit, onSave }) => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Message Bot AI…"
+              placeholder='Message Bot AI...'
               className="chat-input"
               style={{
                 width: "90%",
