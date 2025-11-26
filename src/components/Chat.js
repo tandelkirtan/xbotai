@@ -15,9 +15,12 @@ export const Chat = () => {
     if (!input.trim()) return;
 
     const question = input.trim();
-    const found = sampleData.find(
-      (item) => item.question.toLowerCase() === question.toLowerCase()
-    );
+    const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    const nq = normalize(question);
+    const found = sampleData.find((item) => {
+      const iq = normalize(item.question);
+      return nq === iq || nq.includes(iq) || iq.includes(nq);
+    });
     const response = found
       ? found.response
       : "Sorry, Did not understand your query!";
