@@ -1,5 +1,6 @@
 import { Box, Typography, IconButton, useMediaQuery, useTheme, Drawer } from '@mui/material'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router'
 import MenuIcon from '@mui/icons-material/Menu'
 import { NewChat } from '../components/NewChat'
 import logo from "../assets/logo.png"
@@ -40,10 +41,13 @@ export const History = () => {
         <NewChat />
       )}
       <Box sx={{ width: isMobile ? "100%" : "80%", height: "100%", overflowY: "auto" }}>
-        <Box width="100%" height="8%">
+        <Box component="header" width="100%" height="8%" display="flex" alignItems="center" justifyContent="space-between">
           <Typography fontWeight={800} p={1} pl={isMobile ? 6 : 1} fontSize={30} color="#9860f9ff">
             Conversation History
           </Typography>
+          <Link to="/" href="/" style={{ textDecoration: 'none', marginRight: '16px' }}>
+            <Typography color="#9860f9ff" fontWeight={600}>Back to Chat</Typography>
+          </Link>
         </Box>
         <Box p={2}>
           {savedChats.length === 0 ? (
