@@ -4,7 +4,7 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt'
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import logo from "../assets/logo.png"
-import imgg from "../assets/imgg.png"
+import person from "../assets/person.png"
 
 export const Conversation = ({ messages, onFeedback }) => {
   const formatTime = (timestamp) => {
@@ -17,7 +17,7 @@ export const Conversation = ({ messages, onFeedback }) => {
         <Box key={index}>
           {/* User Message */}
           <Box boxShadow={2} bgcolor="white" borderRadius={2} m={2} display="flex" alignItems="flex-start" p={1} gap={2}>
-            <Box borderRadius="50%" component="img" width="40px" height="40px" src={imgg} alt="user" />
+            <Box borderRadius="50%" component="img" width="40px" height="40px" src={person} alt="user" />
             <Box>
               <Typography fontWeight={600}>You</Typography>
               <p style={{ margin: 0 }}>{msg.question}</p>
@@ -30,7 +30,7 @@ export const Conversation = ({ messages, onFeedback }) => {
             <Box flex={1}>
               <Typography fontWeight={600}><span>Soul AI</span></Typography>
               <p style={{ margin: 0 }}>{msg.response}</p>
-              <Box display="flex" alignItems="center" gap={1} mt={1}>
+              <Box display="flex" alignItems="center" gap={1}>
                 <Typography fontSize={12} color="gray">{formatTime(msg.timestamp)}</Typography>
                 <IconButton 
                   size="small" 
