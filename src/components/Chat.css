@@ -1,0 +1,10 @@
+.ask-button:hover {
+    cursor: pointer;
+    background-color: #9d75e9 !important;
+    transform: scale(1.02);
+    color: white;
+}
+
+input {
+    border: none;
+}
