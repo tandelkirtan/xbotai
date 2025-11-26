@@ -20,7 +20,7 @@ export const Conversation = ({ messages, onFeedback }) => {
             <Box borderRadius="50%" component="img" width="40px" height="40px" src={person} alt="user" />
             <Box>
               <Typography fontWeight={600}>You</Typography>
-              <p style={{ margin: 0 }}>{msg.question}</p>
+              <Typography component="p" sx={{ m: 0 }}>{msg.question}</Typography>
               <Typography fontSize={12} color="gray">{formatTime(msg.timestamp)}</Typography>
             </Box>
           </Box>
@@ -29,7 +29,7 @@ export const Conversation = ({ messages, onFeedback }) => {
             <Box borderRadius="50%" component="img" width="40px" height="40px" src={logo} alt="bot" />
             <Box flex={1}>
               <Typography fontWeight={600}><span>Soul AI</span></Typography>
-              <p style={{ margin: 0 }}>{msg.response}</p>
+              <Typography component="p" sx={{ m: 0 }}>{msg.response}</Typography>
               <Box display="flex" alignItems="center" gap={1}>
                 <Typography fontSize={12} color="gray">{formatTime(msg.timestamp)}</Typography>
                 <IconButton 

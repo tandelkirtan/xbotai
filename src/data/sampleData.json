@@ -27,5 +27,10 @@
     "question": "Hi, how are you",
     "response": "I'm doing great, thank you for asking! How can I help you today?"
   }
+  ,
+  {
+    "question": "What are RESTful APIs?",
+    "response": "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol."
+  }
 ]
 
